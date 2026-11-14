@@ -4,7 +4,7 @@ A hands-on streaming data engineering project built with **Amazon Kinesis Data S
 
 The goal was to follow an event from the moment a Python producer publishes it, through a Kinesis stream, into a consumer that reads and enriches it, and finally into separate delivery paths for U.S. and international activity.
 
-![Streaming ETL architecture](images/Part2.png)
+![Streaming ETL architecture](images/Part2.webp)
 
 ## Why this project matters
 
@@ -16,7 +16,7 @@ I used Python and `boto3` to interact with AWS rather than treating the services
 
 ### 1. Basic event streaming
 
-![Producer to Kinesis to consumer](images/Part1.png)
+![Producer to Kinesis to consumer](images/Part1.webp)
 
 - A command-line **producer** accepts a JSON user-session event and publishes it with the Kinesis `PutRecord` API.
 - The session ID is used as the **partition key**, keeping records for a session associated with the same shard-routing key.
@@ -29,7 +29,7 @@ The main scripts for this part are `src/cli/producer_from_cli.py` and `src/cli/c
 
 The second part extends the flow. A Python consumer reads a session from the source stream, adds processing information and summary metrics, and publishes the enriched event to one of two destination streams.
 
-![Input and transformed event](images/Transformation2.png)
+![Input and transformed event](images/Transformation2.webp)
 
 For each session, the ETL consumer:
 
@@ -88,10 +88,10 @@ The ETL event also includes `processing_timestamp`, generated when the consumer 
 │   └── ARCHITECTURE.md
 ├── images/
 │   ├── evidence/                 # Sanitized screenshots from the lab run
-│   ├── Part1.png                 # Basic producer / stream / consumer diagram
-│   ├── Part2.png                 # Full streaming ETL architecture diagram
-│   ├── Transformation.png        # Transformation illustration
-│   └── Transformation2.png       # Transformation illustration with highlights
+│   ├── Part1.webp                 # Basic producer / stream / consumer diagram
+│   ├── Part2.webp                 # Full streaming ETL architecture diagram
+│   ├── Transformation.webp        # Transformation illustration
+│   └── Transformation2.webp       # Transformation illustration with highlights
 ├── src/
 │   ├── cli/
 │   │   ├── producer_from_cli.py
@@ -174,11 +174,11 @@ The screenshots below are included to make the work easier to review. Account-sp
 
 | Evidence | What it shows |
 |---|---|
-| [Producer and consumer terminal output](images/evidence/producer-consumer-terminal-output.png) | The producer publishes several sample sessions and the consumer reads records from Kinesis shards. |
-| [Active Kinesis streams](images/evidence/kinesis-streams-active.png) | The AWS console showing the two data streams used during the exercise in an active state. |
-| [Kinesis stream configuration](images/evidence/kinesis-stream-configuration.png) | The stream details and the Kinesis console's producer / consumer integration options. This capture was taken while the stream was provisioning. |
-| [S3 buckets](images/evidence/s3-buckets-created.png) | The two destination buckets created for U.S. and international delivery. |
-| [VS Code project layout](images/evidence/vscode-project-layout.png) | The project folders and Python files used during the lab. |
+| [Producer and consumer terminal output](images/evidence/producer-consumer-terminal-output.webp) | The producer publishes several sample sessions and the consumer reads records from Kinesis shards. |
+| [Active Kinesis streams](images/evidence/kinesis-streams-active.webp) | The AWS console showing the two data streams used during the exercise in an active state. |
+| [Kinesis stream configuration](images/evidence/kinesis-stream-configuration.webp) | The stream details and the Kinesis console's producer / consumer integration options. This capture was taken while the stream was provisioning. |
+| [S3 buckets](images/evidence/s3-buckets-created.webp) | The two destination buckets created for U.S. and international delivery. |
+| [VS Code project layout](images/evidence/vscode-project-layout.webp) | The project folders and Python files used during the lab. |
 
 The notebook also retains the Firehose creation steps with generic account placeholders; live account-specific execution output has been cleared from the published copies. The screenshots establish the stream and bucket setup and the producer/consumer test; they do not include a captured S3 object listing after delivery.
 
