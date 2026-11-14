@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+<rect width="1200" height="560" rx="24" fill="#f4f7fb"/>
+<text x="600" y="54" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#132b45">How the ETL consumer enriches a session event</text>
+<rect x="44" y="110" width="330" height="370" rx="18" fill="#ffffff" stroke="#4c83c3" stroke-width="3"/>
+<text x="209" y="150" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#1c4169">Incoming event</text>
+<text x="70" y="196" font-family="monospace" font-size="17" fill="#234d79">{</text>
+<text x="94" y="230" font-family="monospace" font-size="17" fill="#234d79">"session_id": "a1",</text>
+<text x="94" y="264" font-family="monospace" font-size="17" fill="#234d79">"country": "USA",</text>
+<text x="94" y="298" font-family="monospace" font-size="17" fill="#234d79">"browse_history": [</text>
+<text x="118" y="332" font-family="monospace" font-size="17" fill="#234d79">Product1 qty 2</text>
+<text x="118" y="366" font-family="monospace" font-size="17" fill="#234d79">in cart: true</text>
+<text x="118" y="400" font-family="monospace" font-size="17" fill="#234d79">Product2 qty 1</text>
+<text x="118" y="434" font-family="monospace" font-size="17" fill="#234d79">in cart: false</text>
+<text x="70" y="458" font-family="monospace" font-size="17" fill="#234d79">]</text>
+<path d="M398 290 H485" stroke="#4b6e91" stroke-width="6" fill="none"/>
+<path d="M470 274 L494 290 L470 306" stroke="#4b6e91" stroke-width="6" fill="none"/>
+<rect x="510" y="110" width="290" height="370" rx="18" fill="#132b45"/>
+<text x="655" y="156" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#ffffff">Transform</text>
+<rect x="542" y="190" width="226" height="58" rx="12" fill="#236a91"/>
+<text x="655" y="226" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#ffffff">Add processing timestamp</text>
+<rect x="542" y="270" width="226" height="58" rx="12" fill="#36836f"/>
+<text x="655" y="306" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#ffffff">Sum product quantities</text>
+<rect x="542" y="350" width="226" height="58" rx="12" fill="#a46b2b"/>
+<text x="655" y="386" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#ffffff">Sum cart quantities</text>
+<rect x="542" y="430" width="226" height="36" rx="10" fill="#6d5a9c"/>
+<text x="655" y="454" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#ffffff">Count browse entries</text>
+<path d="M824 290 H906" stroke="#4b6e91" stroke-width="6" fill="none"/>
+<path d="M890 274 L914 290 L890 306" stroke="#4b6e91" stroke-width="6" fill="none"/>
+<rect x="930" y="110" width="226" height="370" rx="18" fill="#ffffff" stroke="#36836f" stroke-width="3"/>
+<text x="1043" y="154" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#1e604f">Enriched event</text>
+<text x="958" y="212" font-family="Arial,sans-serif" font-size="18" fill="#1e604f">overall quantity</text>
+<text x="1126" y="212" text-anchor="end" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#1e604f">3</text>
+<line x1="954" y1="232" x2="1132" y2="232" stroke="#d8e5e1" stroke-width="2"/>
+<text x="958" y="276" font-family="Arial,sans-serif" font-size="18" fill="#1e604f">in cart</text>
+<text x="1126" y="276" text-anchor="end" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#1e604f">2</text>
+<line x1="954" y1="296" x2="1132" y2="296" stroke="#d8e5e1" stroke-width="2"/>
+<text x="958" y="340" font-family="Arial,sans-serif" font-size="18" fill="#1e604f">entries</text>
+<text x="1126" y="340" text-anchor="end" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#1e604f">2</text>
+<line x1="954" y1="360" x2="1132" y2="360" stroke="#d8e5e1" stroke-width="2"/>
+<text x="958" y="410" font-family="Arial,sans-serif" font-size="15" fill="#456b61">+ processing timestamp</text>
+<text x="600" y="526" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#53677c">Note: the lab's "different products" metric counts browse-history entries, not distinct product codes.</text>
+</svg>
