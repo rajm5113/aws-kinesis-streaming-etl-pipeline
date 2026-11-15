@@ -1,2 +1,5 @@
+# Runtime dependency for the Python producer and consumer scripts
 boto3>=1.34,<2.0
+
+# Used to open and run the included Jupyter notebooks
 jupyter>=1.0

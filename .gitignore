@@ -1,16 +1,29 @@
+# Python artifacts
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
 .venv/
 venv/
 env/
+
+# Local secrets and AWS configuration
 .env
 .env.*
 !.env.example
 .aws/
 **/credentials
 **/config
+
+# Runtime logs
 *.log
+
+# Jupyter temporary files
 .ipynb_checkpoints/
+
+# Editor / OS files
 .vscode/
 .idea/
 .DS_Store
